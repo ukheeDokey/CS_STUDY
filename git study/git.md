@@ -1,25 +1,54 @@
 
-# branch 생성과 변경
-
+# Git과 Github
+- ### Git이란
+  - 코드 변경점 기록
+  - 버전 관리 도구
+  - 소프트웨어의 변경사항을 체계적으로 추적하고 통제하는 것
 -----
-- git stash
+- ### Github란
+  - 온라인으로 자료를 백업 -> 링크를 통해 공유 가능
+  - 백업과 공유가 가능한 온라인 저장소
+-----
+- ### 자주 사용하는 Linux 명령어
+  - pwd : pring working directory, 즉 현재 작업하는 폴더
+  - ls : list, 내 디렉토리를 보여줌
+  - ls -a : list all, 숨겨진 모든 파일까지 보여줌
+  - mkdir "000" : make directory, 000이란 이름의 디렉토리 생성
+  - cd 00 : change directory, 00 디렉토리로 이동
+-----
+- ### git stash
     - 작업하고 있던 디렉토리에서 커밋되지 않은 변경 사항이 있는 경우 다른 브랜치로 이동할 수 없음
     - 내 모든 변경사항을 커밋하면 안되기 때문에 사용
     - 변경사항을 임시로 저장하는 기능
 -----
-- git branch "name"
+- ### git branch "name"
     - name이란 이름의 새로운 branch 생성
 -----
-- git branch
+- ### git branch
     - 현재 branch 상태 확인
 -----
-- git checkout "name"
-    - name branch로 이동
-    - ada
+- ### git checkout "name"
+    - name branch로 이동 = git switch "name"
+    - git checkout -b "name" : name branch를 생성함과 동시에 해당 branch로 이동
 -----    
-- 원래 clone으로 끌어오면 git이 자동으로 등록되는데, 안 됐을 경우
+- ### 원래 clone으로 끌어오면 git이 자동으로 등록되는데, 안 됐을 경우
     - [git remote add upstream 레포지토리 주소] 로 직접 추가해야함
 -----
-- git init : 초기화
-- git add filename : filename을 추가
-- git push : 해당 내용을 git에 업로드
+- ### 자주 사용하는 git 명령어
+  - git init : 초기화, 본격적으로 사용하기 위한 초기 세팅
+  - git add filename : filename을 추가
+  - git commit -m "~" : ~이란 내용의 커밋 메시지와 함께 커밋. 즉 실제로 저장
+  - git push : 해당 내용을 git에 업로드
+  - git log : log, 내역을 확인
+-----
+- ### main과 merge
+  - main branch는 최종 branch
+  - 그동안 각각의 branch 생성하여 작업 후, 완성 시 main에 합침
+  - 이때 사용하는 것이 merge
+  - git merge "name" : name branch를 main에 합친다
+    - 하지만 생각보다 잘 사용하지 않음
+  - 실제론 Github에서 합침
+  - 해당 기능이 Pull과 Request
+  - Pull : 당겨서 합치는 작업
+  - Request : 요청하다
+    - 위 두 기능은 merge의 기능을 포함하고 있음
