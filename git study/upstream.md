@@ -20,3 +20,21 @@
 #### 주의사항
 - 충돌이 발생할 수 있으므로 병합을 진행하기 전에 변경사항을 잘 확인
 - 원격 저장소의 [url]이 변경되면 다시 설정
+---
+#### upstream과 downstream
+- 원래 소유자의 remote를 말할 때 upstream, 내가 포크한 remote를 말할 때 origin
+- local과 origin의 관계에선 local이 downstream, origin이 upstream
+---
+#### 일반적인 프로세스
+1. 원본 remote repository(upstream)를 깃허브에서 fork
+2. fork한 remote repository(origin)를 깃 클라이언트로 clone
+3. 기능을 완성할 때까지 반복
+    - clone한 repository(local)에 commit
+    - local에서 origin으로 push
+4. upstream에 반영하기
+    - PR을 등록하기 전 upstream에 바뀐 내용이 없는 경우
+      - origin에서 upstream으로 PR
+    - PR을 등록하기 전 upstream에 바뀐 내용이 있는 경우
+      - upstream을 local로 pull
+      - local에서 origin으로 push
+      - origin에서 upstream으로 PR
